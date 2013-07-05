@@ -1,0 +1,66 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="<: $request.uri_base :>">PickColor</a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+        </div>
+
+        <div class="span8">
+            <div class="page-header">
+                <h4>上传</h4>
+            </div>
+            <form class="form-horizontal" action="<: $request.uri_base :>" method="post" enctype="multipart/form-data">
+                <div class="control-group">
+                    <label class="control-label" for="inputImage">图片</label>
+                    <div class="controls">
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="input-append">
+                                <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">浏览</span><span class="fileupload-exists">更改</span><input type="file" name="image" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">上传</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="page-header">
+                <h4>预览</h4>
+            </div>
+            : if $image != nil {
+            <form class="form-horizontal" action="<: $request.uri_base :>/preview" method="post">
+                <div class="control-group">
+                    <div class="controls">
+                        <div style="width: <: $width :>px; height: <: $height :>px;" id="special">
+                            <p><img src="<: $request.uri_base :>/img/<: $image :>"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="hidden" id="status" name="cursor" value="0, 0">
+                        <button type="submit" class="btn">提交</button>
+                    </div>
+                </div>
+            </form>
+            : }
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+    <p>Powered by Dancer <: $dancer_version :></p>
+    </footer>
+</div>
