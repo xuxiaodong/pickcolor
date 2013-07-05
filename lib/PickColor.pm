@@ -76,14 +76,13 @@ any [qw(get post)] => '/preview' => sub {
         $filename = session('file');
         my $file = path( $base_path, $filename );
         my @pixel = get_pixel( $file, $x, $y );
-        @pixel = map { $_ < 1 ? int( $_ * 100 ) : $_ } @pixel;
+        # FIXME
         $color = sprintf "#%02lx%02lx%02lx", @pixel;
         my @rgb = qw(红 绿 蓝);
         for my $index ( 1 .. 3 ) {
             $pixel{ $rgb[ $index - 1 ] } = $pixel[ $index - 1 ];
         }
     }
-
 
     template 'preview', {
         image => $filename,
