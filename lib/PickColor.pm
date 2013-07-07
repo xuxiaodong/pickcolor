@@ -57,8 +57,8 @@ any [qw(get post)] => '/' => sub {
         }
     }
 
-
-    template 'index', {
+    template 'index',
+        {
         image  => $filename,
         width  => $width,
         height => $height,
@@ -84,7 +84,8 @@ any [qw(get post)] => '/preview' => sub {
         }
     }
 
-    template 'preview', {
+    template 'preview',
+        {
         image => $filename,
         x     => $x,
         y     => $y,

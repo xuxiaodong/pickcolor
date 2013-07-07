@@ -50,7 +50,7 @@
                 <div class="control-group">
                     <div class="controls">
                         <input type="hidden" id="status" name="cursor" value="0, 0">
-                        <button type="submit" class="btn">提交</button>
+                        <button type="submit" class="btn">取色</button>
                     </div>
                 </div>
             </form>
@@ -61,6 +61,6 @@
     <hr>
 
     <footer>
-    <p>Powered by Dancer <: $dancer_version :></p>
+        <p>Powered by Dancer <: $dancer_version :></p>
     </footer>
 </div>

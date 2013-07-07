@@ -21,7 +21,7 @@
             </div>
             <form action="<: $request.uri_base :>/preview" method="post">
                 <input type="hidden" id="status" name="cursor" value="0, 0">
-                <button type="submit" class="btn">提交</button>
+                <button type="submit" class="btn">取色</button>
             </form>
 
             <table class="table table-striped table-hover">
@@ -32,20 +32,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>位置</td>
-                        <td><: $x :>, <: $y :></td>
-                    </tr>
-                    : for $rgb.kv() -> $pair {
-                    <tr>
-                        <td><: $pair.key :></td>
-                        <td><: $pair.value :></td>
-                    </tr>
-                    : }
-                    <tr>
-                        <td>HEX</td>
-                        <td><: $color :></td>
-                    </tr>
+                <tr>
+                    <td>位置</td>
+                    <td><: $x :>, <: $y :></td>
+                </tr>
+                : for $rgb.kv() -> $pair {
+                <tr>
+                    <td><: $pair.key :></td>
+                    <td><: $pair.value :></td>
+                </tr>
+                : }
+                <tr>
+                    <td>HEX</td>
+                    <td><: $color :></td>
+                </tr>
                 </tbody>
             </table>
             : }
@@ -56,6 +56,6 @@
     <hr>
 
     <footer>
-    <p>Powered by Dancer <: $dancer_version :></p>
+        <p>Powered by Dancer <: $dancer_version :></p>
     </footer>
 </div>
