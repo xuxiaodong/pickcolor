@@ -21,7 +21,11 @@
             </div>
             <form action="<: $request.uri_base :>/preview" method="post">
                 <input type="hidden" id="status" name="cursor" value="0, 0">
+<<<<<<< HEAD
                 <button type="submit" class="btn">取色</button>
+=======
+                <button type="submit" class="btn">重新取色</button>
+>>>>>>> d30ff1631c880c6a2727139b9c3d95247aff729c
             </form>
 
             <table class="table table-striped table-hover">

@@ -57,8 +57,12 @@ any [qw(get post)] => '/' => sub {
         }
     }
 
+<<<<<<< HEAD
     template 'index',
         {
+=======
+    template 'index', {
+>>>>>>> d30ff1631c880c6a2727139b9c3d95247aff729c
         image  => $filename,
         width  => $width,
         height => $height,
@@ -76,7 +80,9 @@ any [qw(get post)] => '/preview' => sub {
         $filename = session('file');
         my $file = path( $base_path, $filename );
         my @pixel = get_pixel( $file, $x, $y );
-        # FIXME
+        # 将浮点 RGB 分量转换为整型
+        @pixel = map { sprintf( '%.f', $_ * 255 ) } @pixel;
+        # 将 RGB 转换为 HEX
         $color = sprintf "#%02lx%02lx%02lx", @pixel;
         my @rgb = qw(红 绿 蓝);
         for my $index ( 1 .. 3 ) {

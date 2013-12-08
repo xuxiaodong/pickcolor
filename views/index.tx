@@ -41,6 +41,7 @@
             : if $image != nil {
             <form class="form-horizontal" action="<: $request.uri_base :>/preview" method="post">
                 <div class="control-group">
+                    <label class="control-label" for="inputImage">缩略图</label>
                     <div class="controls">
                         <div style="width: <: $width :>px; height: <: $height :>px;" id="special">
                             <p><img src="<: $request.uri_base :>/img/<: $image :>"></p>
